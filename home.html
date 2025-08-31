@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetkard - The Ultimate Lead Generation Tool | Transform Your Networking</title>
+    <meta name="description" content="Vetkard turns boring business cards into powerful lead generation tools. Capture 90% more leads with gated profiles and WhatsApp integration. Join 500+ professionals boosting sales 50%+">
+    
+    <!-- Preconnect to CDNs for better performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    
+    <!-- Consolidated CSS resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Mobile-First Base Styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #001F3F;
+            color: #FFFFFF;
+            font-size: 15px; /* Mobile-optimized base font size */
+            line-height: 1.5;
+        }
+        
+        .accent-silver {
+            color: #E5E5E5; /* Improved contrast for accessibility */
+        }
+        
+        .bg-accent-silver {
+            background-color: #C0C0C0;
+        }
+        
+        .border-accent-silver {
+            border-color: #C0C0C0;
+        }
+        
+        /* Mobile-First Button Styles */
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+            min-height: 48px; /* Touch-friendly minimum */
+            padding: 0.875rem 1rem;
+            font-size: 0.875rem;
+            word-wrap: break-word;
+            text-align: center;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            display: inline-block;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Mobile-First Countdown Timer */
+        .countdown-timer {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            text-align: center;
+        }
+        
+        /* Mobile-First Video Overlay */
+        .video-overlay {
+            background: rgba(0, 31, 63, 0.9);
+            padding: 1rem;
+            border-radius: 15px;
+            border: 2px solid #60A5FA;
+            box-shadow: 0 8px 32px rgba(0, 31, 63, 0.8);
+            backdrop-filter: blur(10px);
+            max-width: 100%;
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+        }
+        
+        /* Mobile-First Hero Section */
+        .hero-video {
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Mobile-First Testimonial Cards */
+        .testimonial-card {
+            background: linear-gradient(135deg, #003366, #004080);
+            border: 1px solid #C0C0C0;
+            transition: transform 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile-First Typography */
+        h1 {
+            font-size: 1.75rem; /* 28px */
+            line-height: 1.2;
+            word-wrap: break-word;
+            hyphens: auto;
+            margin-bottom: 1rem;
+        }
+        
+        h1 span {
+            font-size: 1.375rem; /* 22px */
+            display: block;
+            margin-top: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.375rem; /* 22px */
+            line-height: 1.3;
+            word-wrap: break-word;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.4;
+            word-wrap: break-word;
+            margin-bottom: 0.75rem;
+        }
+        
+        p {
+            font-size: 1rem; /* 16px */
+            line-height: 1.5;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        /* Mobile-First Layout */
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        /* Mobile-First Grid Stacking */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        /* Mobile-First Spacing */
+        .py-16 {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+        
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        /* Mobile-First Navigation */
+        .nav-logo {
+            width: 120px; /* Smaller logo for mobile */
+            height: 40px;
+            margin-right: 0.75rem;
+        }
+        
+        /* Mobile-First Image Responsiveness */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Touch-Friendly Interactive Elements */
+        button, .btn, a[role="button"] {
+            min-height: 44px;
+            min-width: 44px;
+            padding: 0.75rem 1rem;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            display: block;
+        }
+        
+        .desktop-menu {
+            display: none;
+        }
+        
+        /* Flexible Containers */
+        .max-w-4xl,
+        .max-w-3xl,
+        .max-w-6xl {
+            max-width: 100%;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        
+        /* Tablet Breakpoint - 768px and up */
+        @media (min-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            
+            h1 {
+                font-size: 2.5rem; /* 40px */
+            }
+            
+            h1 span {
+                font-size: 2rem; /* 32px */
+            }
+            
+            h2 {
+                font-size: 2rem; /* 32px */
+            }
+            
+            h3 {
+                font-size: 1.5rem; /* 24px */
+            }
+            
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .grid.md\:grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid.md\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .pulse-green {
+                width: auto;
+                max-width: none;
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .video-overlay {
+                position: absolute;
+                top: 5rem;
+                right: 2rem;
+                max-width: 300px;
+                text-align: left;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+            
+            .desktop-menu {
+                display: flex;
+            }
+            
+            .nav-logo {
+                width: 240px;
+                height: 64px;
+            }
+            
+            .py-16 {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+        
+        /* Desktop Breakpoint - 1024px and up */
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 3.5rem; /* 56px */
+            }
+            
+            h1 span {
+                font-size: 2.5rem; /* 40px */
+            }
+            
+            h2 {
+                font-size: 2.5rem; /* 40px */
+            }
+            
+            h3 {
+                font-size: 1.75rem; /* 28px */
+            }
+            
+            p.lg\:text-2xl {
+                font-size: 1.5rem !important; /* 24px */
+            }
+            
+            .container {
+                max-width: 1200px;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            
+            .pulse-green {
+                padding: 1.25rem 2.5rem;
+                font-size: 1.125rem;
+            }
+            
+            .countdown-timer {
+                padding: 1.25rem;
+            }
+            
+            .testimonial-card:hover {
+                transform: translateY(-5px);
+            }
+        }
+        
+        /* Large Desktop - 1280px and up */
+        @media (min-width: 1280px) {
+            h1 {
+                font-size: 4rem; /* 64px */
+            }
+            
+            h1 span {
+                font-size: 3rem; /* 48px */
+            }
+            
+            .container {
+                max-width: 1400px;
+            }
+        }
+        
+        /* Small Mobile - 480px and below */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            
+            h1 {
+                font-size: 1.5rem; /* 24px */
+                padding: 0 0.5rem;
+            }
+            
+            h1 span {
+                font-size: 1.25rem; /* 20px */
+                padding: 0 0.5rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem; /* 20px */
+            }
+            
+            h3 {
+                font-size: 1rem; /* 16px */
+            }
+            
+            p {
+                font-size: 0.875rem; /* 14px */
+                padding: 0 0.5rem;
+            }
+            
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            
+            .pulse-green {
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+                max-width: 260px;
+            }
+            
+            .video-overlay {
+                padding: 0.75rem;
+                margin: 0 0.5rem 1rem 0.5rem;
+            }
+            
+            .countdown-timer {
+                padding: 0.75rem;
+                margin: 0.75rem 0;
+            }
+            
+            .py-16 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+            
+            .py-8 {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            
+            .grid {
+                gap: 1rem;
+            }
+            
+            .nav-logo {
+                width: 100px;
+                height: 32px;
+            }
+        }
+
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation Bar - Mobile-First Design -->
+    <nav class="fixed top-0 w-full bg-[#001F3F] border-b border-accent-silver z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo - Mobile-Optimized -->
+            <div class="flex items-center">
+                <div class="nav-logo overflow-hidden rounded-lg">
+                    <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0" loading="lazy">
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation - Hidden on Mobile -->
+            <div class="desktop-menu space-x-6">
+                <a href="home.html" class="text-white hover:text-gray-200 transition-colors font-semibold">Home</a>
+                <a href="how-it-works.html" class="text-white hover:text-gray-200 transition-colors">How It Works</a>
+                <a href="features.html" class="text-white hover:text-gray-200 transition-colors">Features</a>
+                <a href="pricing.html" class="text-white hover:text-gray-200 transition-colors">Pricing</a>
+                <a href="faqs.html" class="text-white hover:text-gray-200 transition-colors">FAQs</a>
+                <a href="contact.html" class="text-white hover:text-gray-200 transition-colors">Contact/Order</a>
+            </div>
+            
+            <!-- CTA Button - Mobile-Friendly -->
+            <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-bold pulse-green transition-colors hidden md:inline-block">
+                Order Now
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu text-white" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu - Touch-Friendly -->
+        <div id="mobileMenu" class="hidden mobile-menu bg-[#001F3F] border-t border-accent-silver">
+            <div class="px-4 py-2 space-y-1">
+                <a href="home.html" class="block text-white hover:text-gray-200 py-3 px-2 rounded transition-colors">Home</a>
+                <a href="how-it-works.html" class="block text-white hover:text-gray-200 py-3 px-2 rounded transition-colors">How It Works</a>
+                <a href="features.html" class="block text-white hover:text-gray-200 py-3 px-2 rounded transition-colors">Features</a>
+                <a href="pricing.html" class="block text-white hover:text-gray-200 py-3 px-2 rounded transition-colors">Pricing</a>
+                <a href="faqs.html" class="block text-white hover:text-gray-200 py-3 px-2 rounded transition-colors">FAQs</a>
+                <a href="contact.html" class="block text-white hover:text-gray-200 py-3 px-2 rounded transition-colors">Contact/Order</a>
+                <div class="pt-3 pb-2">
+                    <a href="contact.html" class="block bg-green-600 hover:bg-green-700 text-white text-center py-3 px-4 rounded-lg font-bold transition-colors">
+                        Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video - Mobile-First Design -->
+    <section class="hero-video pt-24 pb-16 relative min-h-screen flex items-center justify-center">
+        <!-- Background Video - Performance Optimized -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-30" aria-label="Vetkard transformation video demo" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%23001F3F' width='100%25' height='100%25'/%3E%3C/svg%3E">
+            <source src="vetkard-promo-video.mp4" type="video/mp4">
+            <!-- Fallback for browsers that don't support video -->
+            Your browser does not support the video tag.
+        </video>
+        
+        <!-- Semi-transparent background overlay for better contrast -->
+        <div class="absolute inset-0 bg-black/50"></div>
+        
+        <!-- Main hero content - Mobile-First Layout -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Mobile-Optimized Typography -->
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 animate__animated animate__fadeInUp text-white">
+                    Vetkard: The Ultimate Lead Generation Tool
+                    <span class="block text-lg md:text-xl lg:text-2xl text-gray-200 mt-4">Unlock Revenue Streams Effortlessly</span>
+                </h1>
+                
+                <!-- Mobile Video Overlay - Positioned for Mobile -->
+                <div class="video-overlay animate__animated animate__fadeIn md:absolute md:top-20 md:right-8">
+                    <h2 class="text-lg font-bold text-white mb-1">Watch the Evolution</h2>
+                    <p class="text-sm text-gray-200">See how Vetkard transforms boring cards into lead magnets</p>
+                </div>
+                
+                <!-- Mobile-Optimized Description -->
+                <p class="mb-8 text-gray-200 animate__animated animate__fadeInUp animate__delay-1s leading-relaxed max-w-3xl mx-auto">
+                    Tired of lost opportunities from outdated cards? Vetkard gates your profile with WhatsApp form integration, 
+                    capturing leads through seamless contact flow - join the elite pros boosting sales 50%+
+                </p>
+                
+                <!-- Key Benefits - Mobile-First Grid -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="floating text-center">
+                        <i class="fas fa-chart-line text-3xl md:text-4xl text-green-400 mb-4"></i>
+                        <h3 class="font-bold mb-2 text-white">Capture 90% More Leads</h3>
+                        <p class="text-gray-200 text-sm md:text-base">Advanced lead capture system that works seamlessly</p>
+                    </div>
+                    
+                    <div class="floating text-center" style="animation-delay: 0.5s;">
+                        <i class="fas fa-globe text-3xl md:text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="font-bold mb-2 text-white">Custom Sites Beyond Cards</h3>
+                        <p class="text-gray-200 text-sm md:text-base">Professional websites that showcase your expertise</p>
+                    </div>
+                    
+                    <div class="floating text-center" style="animation-delay: 1s;">
+                        <i class="fas fa-handshake text-3xl md:text-4xl text-purple-400 mb-4"></i>
+                        <h3 class="font-bold mb-2 text-white">Effortless Networking</h3>
+                        <p class="text-gray-200 text-sm md:text-base">Turn every handshake into a potential sale</p>
+                    </div>
+                </div>
+                
+
+                
+                <!-- Mobile-First CTA Button -->
+                <div class="flex justify-center">
+                    <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white pulse-green transition-colors animate__animated animate__fadeInUp animate__delay-3s mt-4 rounded-lg font-bold">
+                        Start Generating Leads Now - Limited Spots!
+                    </a>
+                </div>
+                
+                <!-- Social Proof - Mobile-Optimized -->
+                <p class="mt-6 text-gray-200 animate__animated animate__fadeInUp animate__delay-4s text-sm md:text-base">
+                    <i class="fas fa-users mr-2"></i>
+                    <strong>FOMO Alert:</strong> 500+ users already thriving with Vetkard
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section - Mobile-First Design -->
+    <section class="py-16 bg-gradient-to-r from-[#002244] to-[#003366]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-bold mb-4 text-white">What Our Elite Users Say</h2>
+                <p class="text-gray-200">Join the success stories - 4.9/5 rating from satisfied professionals</p>
+            </div>
+            
+            <!-- Mobile-First Testimonial Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60/4080FF/FFFFFF?text=JD" alt="John D" class="w-12 h-12 md:w-15 md:h-15 rounded-full mr-4 flex-shrink-0" loading="lazy">
+                        <div class="min-w-0">
+                            <h4 class="font-bold text-white text-sm md:text-base">John D.</h4>
+                            <p class="text-gray-200 text-xs md:text-sm">Sales Director</p>
+                            <div class="text-yellow-400 flex items-center">
+                                <span class="flex">
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                </span>
+                                <span class="text-white ml-2 text-xs md:text-sm">5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 text-sm md:text-base leading-relaxed">"Generated 50 qualified leads in my first week! The WhatsApp integration is genius - prospects reach out instantly. ROI was immediate!"</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60/FF6B35/FFFFFF?text=SM" alt="Sarah M" class="w-12 h-12 md:w-15 md:h-15 rounded-full mr-4 flex-shrink-0" loading="lazy">
+                        <div class="min-w-0">
+                            <h4 class="font-bold text-white text-sm md:text-base">Sarah M.</h4>
+                            <p class="text-gray-200 text-xs md:text-sm">Real Estate Agent</p>
+                            <div class="text-yellow-400 flex items-center">
+                                <span class="flex">
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                </span>
+                                <span class="text-white ml-2 text-xs md:text-sm">5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 text-sm md:text-base leading-relaxed">"Closed 3 deals from Vetkard leads this month alone. The professional look builds instant trust. Worth every penny!"</p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60/28A745/FFFFFF?text=MK" alt="Mike K" class="w-12 h-12 md:w-15 md:h-15 rounded-full mr-4 flex-shrink-0" loading="lazy">
+                        <div class="min-w-0">
+                            <h4 class="font-bold text-white text-sm md:text-base">Mike K.</h4>
+                            <p class="text-gray-200 text-xs md:text-sm">Business Coach</p>
+                            <div class="text-yellow-400 flex items-center">
+                                <span class="flex">
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                    <i class="fas fa-star text-xs md:text-sm"></i>
+                                </span>
+                                <span class="text-white ml-2 text-xs md:text-sm">5/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 text-sm md:text-base leading-relaxed">"My networking game changed overnight. The lead capture system is so smooth, prospects don't even realize they're being qualified!"</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-200 text-sm md:text-lg">
+                    <i class="fas fa-award mr-2 text-yellow-400"></i>
+                    <strong>As featured in top marketing blogs and sales platforms</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Success Stories Section -->
+    <section class="py-16 bg-gradient-to-r from-[#002244] to-[#003366]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">Real Success Stories</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Success Story 1 -->
+                    <div class="bg-[#001F3F] p-6 rounded-lg border border-[#C0C0C0]">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-user-tie text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Rajesh Sharma</h4>
+                                <p class="text-gray-300 text-sm">Real Estate Agent</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-200 text-sm mb-3">
+                                "Vetkard transformed my networking game. I went from 2-3 leads per month to 15-20 qualified leads weekly. Closed ₹45 lakhs in deals in just 3 months!"
+                            </p>
+                        </div>
+                        <div class="bg-green-900 bg-opacity-30 p-3 rounded">
+                            <p class="text-green-400 text-xs font-bold">+650% Lead Increase</p>
+                        </div>
+                    </div>
+
+                    <!-- Success Story 2 -->
+                    <div class="bg-[#001F3F] p-6 rounded-lg border border-[#C0C0C0]">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-female text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Priya Patel</h4>
+                                <p class="text-gray-300 text-sm">Digital Marketing Consultant</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-200 text-sm mb-3">
+                                "My conversion rate jumped from 12% to 38% after switching to Vetkard. The WhatsApp integration is genius - clients love the instant connection."
+                            </p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded">
+                            <p class="text-blue-400 text-xs font-bold">3x Higher Conversions</p>
+                        </div>
+                    </div>
+
+                    <!-- Success Story 3 -->
+                    <div class="bg-[#001F3F] p-6 rounded-lg border border-[#C0C0C0]">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-briefcase text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Amit Desai</h4>
+                                <p class="text-gray-300 text-sm">Insurance Advisor</p>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-200 text-sm mb-3">
+                                "The gated profile feature is a game-changer. I now have 200+ qualified leads in my pipeline. ROI was achieved within 2 weeks!"
+                            </p>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-3 rounded">
+                            <p class="text-purple-400 text-xs font-bold">₹18 Lakhs Revenue Added</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aggregate Results -->
+                <div class="mt-12 bg-gradient-to-r from-green-600 to-blue-600 p-8 rounded-lg text-center">
+                    <h3 class="text-2xl font-bold mb-4">500+ Professionals Can't Be Wrong</h3>
+                    <div class="grid md:grid-cols-4 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-white">₹2.3 Cr+</div>
+                            <div class="text-gray-200 text-sm">Revenue Generated</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-white">15,000+</div>
+                            <div class="text-gray-200 text-sm">Leads Captured</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-white">89%</div>
+                            <div class="text-gray-200 text-sm">Customer Satisfaction</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-white">14 Days</div>
+                            <div class="text-gray-200 text-sm">Avg. ROI Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem vs Solution Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">The Networking Revolution</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-6 text-red-400">The Old Way (Boring & Broken)</h3>
+                        <img src="https://i.postimg.cc/wT7rsK38/old-visit-card.jpg" alt="Old Boring Visit Card" class="w-full max-w-md mx-auto mb-6 rounded-lg shadow-lg">
+                        <ul class="text-left space-y-3 text-gray-200">
+                            <li><i class="fas fa-times text-red-400 mr-3"></i>Cards get lost or thrown away</li>
+                            <li><i class="fas fa-times text-red-400 mr-3"></i>No way to capture lead information</li>
+                            <li><i class="fas fa-times text-red-400 mr-3"></i>Static, boring presentation</li>
+                            <li><i class="fas fa-times text-red-400 mr-3"></i>No follow-up mechanism</li>
+                            <li><i class="fas fa-times text-red-400 mr-3"></i>Missed opportunities = Lost revenue</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-6 text-green-400">The Vetkard Way (Smart & Profitable)</h3>
+                        <img src="https://i.postimg.cc/rp0yhZfv/vetkard-mockup.png" alt="Vetkard 3D Mockup" class="w-full max-w-sm mx-auto mb-6 rounded-lg shadow-lg">
+                        <ul class="text-left space-y-3 text-gray-200">
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Digital cards never get lost</li>
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Automatic lead capture via WhatsApp</li>
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Dynamic, impressive websites</li>
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Instant connection to prospects</li>
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Every interaction = Potential sale</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">Imagine This Transformation...</h3>
+                        <p class="text-lg text-gray-200 mb-6">
+                            Picture handing out a card that not only impresses but captures data instantly. 
+                            That's Vetkard - turning every handshake into a pipeline opportunity. 
+                            No more wondering "what if" - know exactly who's interested and follow up immediately.
+                        </p>
+                        
+                        <div class="bg-[#001F3F] p-6 rounded-lg border border-[#C0C0C0]">
+                            <h4 class="text-xl font-bold mb-4 text-green-400">🎁 FREE BONUS: Lead Generation Masterclass</h4>
+                            <p class="text-gray-200 mb-4">Access our exclusive guide: "10 Psychology Tricks to Convert More Leads" - normally ₹999, FREE for early adopters!</p>
+                            <a href="psychology-guide.html" class="inline-block bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                                Claim Your Free Guide Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI & Benefits Section - Mobile-First Design -->
+    <section class="py-16 bg-gradient-to-r from-[#002244] to-[#003366]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-bold mb-8 text-white">The ROI is Undeniable</h2>
+                <p class="mb-12 text-gray-200 leading-relaxed">Invest once, generate leads forever. See the math that's making professionals rich:</p>
+                
+                <!-- Mobile-Optimized Comparison Cards -->
+                <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
+                    <div class="bg-[#001F3F] p-6 md:p-8 rounded-lg border border-red-400">
+                        <h3 class="font-bold mb-4 text-red-400">Without Vetkard</h3>
+                        <ul class="text-left space-y-2 md:space-y-3 text-gray-200 text-sm md:text-base">
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>100 cards distributed</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>5% actually make contact (5 people)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>20% conversion rate (1 sale)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Average deal: ₹50,000</span>
+                            </li>
+                            <li class="font-bold text-red-400 flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Monthly revenue: ₹50,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-[#001F3F] p-6 md:p-8 rounded-lg border border-green-400">
+                        <h3 class="font-bold mb-4 text-green-400">With Vetkard</h3>
+                        <ul class="text-left space-y-2 md:space-y-3 text-gray-200 text-sm md:text-base">
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>100 scans/shares</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>90% provide contact info (90 people)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>30% conversion rate (27 sales)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Average deal: ₹50,000</span>
+                            </li>
+                            <li class="font-bold text-green-400 flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Monthly revenue: ₹1,350,000</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Mobile-Optimized ROI Highlight -->
+                <div class="bg-gradient-to-r from-green-600 to-blue-600 p-6 md:p-8 rounded-lg">
+                    <h3 class="font-bold mb-4">2,600% ROI Increase!</h3>
+                    <p class="mb-6 text-sm md:text-xl">That's an extra ₹1,300,000 per month from the same networking effort</p>
+                    <p class="text-sm md:text-lg text-gray-200">Vetkard pays for itself in the first week. Everything after is pure profit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section - Mobile-First Design -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-bold mb-6 text-white">Don't Let Another Lead Slip Away</h2>
+            <p class="mb-8 text-gray-200 leading-relaxed">
+                Every day you wait is money lost. Join the elite 500+ professionals already dominating their markets.
+            </p>
+            
+
+            
+            <!-- Mobile-First CTA Button -->
+            <div class="flex justify-center mb-6">
+                <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white pulse-green transition-colors rounded-lg font-bold">
+                    Claim Your Leads Now Before It's Gone
+                </a>
+            </div>
+            
+            <!-- Mobile-Optimized Guarantee Text -->
+            <p class="text-gray-200 text-sm md:text-base leading-relaxed">
+                <i class="fas fa-shield-alt mr-2 text-green-400"></i>
+                30-day money-back guarantee • Secure WhatsApp process • Join 500+ satisfied users
+            </p>
+        </div>
+    </section>
+
+    <!-- Email Newsletter Signup -->
+    <section class="py-16 bg-gradient-to-r from-[#002244] to-[#003366]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">Get Weekly Lead Generation Tips</h2>
+                <p class="text-gray-200 mb-6">Join 2,000+ professionals getting exclusive networking strategies, case studies, and insider tips delivered to your inbox.</p>
+                
+                <form id="newsletter-form" class="max-w-md mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input 
+                            type="email" 
+                            id="newsletter-email" 
+                            placeholder="Enter your email address" 
+                            required
+                            class="flex-1 px-4 py-3 rounded-lg bg-[#001F3F] text-white border border-[#C0C0C0] focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500"
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold transition-colors"
+                        >
+                            Get Free Tips
+                        </button>
+                    </div>
+                    <div id="newsletter-status" class="mt-4 text-sm"></div>
+                </form>
+                
+                <div class="mt-6 text-gray-300 text-sm">
+                    <i class="fas fa-lock mr-1"></i> Your email is safe. Unsubscribe anytime.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Mobile-First Design -->
+    <footer class="bg-[#000D1A] border-t border-accent-silver py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0">
+                <!-- Logo and Copyright - Mobile-Centered -->
+                <div class="flex flex-col items-center space-y-2 md:flex-row md:space-y-0 md:space-x-4">
+                    <div class="w-32 h-10 md:w-44 md:h-12 overflow-hidden rounded-lg">
+                        <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0" loading="lazy">
+                    </div>
+                    <p class="text-gray-200 text-sm text-center md:text-left">© 2025 Vetkard - A Lead Generation Tool</p>
+                </div>
+                
+                <!-- WhatsApp CTA - Mobile-Optimized -->
+                <div class="w-full md:w-auto">
+                    <a href="https://wa.me/yournumber?text=I want Vetkard" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg flex items-center justify-center transition-colors w-full md:w-auto min-h-[44px]" aria-label="Contact us on WhatsApp">
+                        <i class="fab fa-whatsapp mr-2 text-lg"></i>
+                        <span class="font-medium">WhatsApp Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Newsletter form handling
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newsletter-email').value;
+            const statusDiv = document.getElementById('newsletter-status');
+            
+            // Simple validation
+            if (!email || !email.includes('@')) {
+                statusDiv.innerHTML = '<p class="text-red-400">Please enter a valid email address.</p>';
+                return;
+            }
+            
+            // Simulate form submission
+            statusDiv.innerHTML = '<p class="text-green-400"><i class="fas fa-spinner fa-spin mr-2"></i>Subscribing...</p>';
+            
+            setTimeout(() => {
+                statusDiv.innerHTML = '<p class="text-green-400"><i class="fas fa-check mr-2"></i>Success! Check your email for confirmation.</p>';
+                document.getElementById('newsletter-email').value = '';
+                
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    statusDiv.innerHTML = '';
+                }, 3000);
+            }, 1500);
+        });
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add loading states for external links
+        document.querySelectorAll('a[href*="contact.html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.textContent.includes('Claim') || this.textContent.includes('Get')) {
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Loading...';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

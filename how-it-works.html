@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Vetkard Works - Transform Your Networking | Lead Generation Process</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #001F3F;
+            color: white;
+        }
+        
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .step-card {
+            background: linear-gradient(135deg, #003366, #004080);
+            border: 2px solid #C0C0C0;
+            transition: transform 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-number {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .roi-calculator {
+            background: linear-gradient(135deg, #1a4d66, #2d5aa0);
+            border: 2px solid #C0C0C0;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .calculator-input {
+            background: #001F3F;
+            border: 1px solid #C0C0C0;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        
+        /* Professional Mobile Optimization - Preserving Original Design */
+        @media (max-width: 768px) {
+            /* Navigation mobile handling */
+            .hidden.md\:flex {
+                display: none;
+            }
+            
+            .md\:hidden {
+                display: block;
+            }
+            
+            /* Step cards mobile optimization */
+            .step-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin-bottom: 1rem;
+            }
+            
+            /* ROI calculator mobile */
+            .roi-calculator {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+            
+            .calculator-input {
+                padding: 0.875rem;
+                font-size: 16px; /* Prevents iOS zoom */
+            }
+            
+            /* Grid responsive layout */
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Container mobile padding */
+            .container {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+            
+            /* Touch-friendly elements */
+            .pulse-green {
+                min-height: 48px;
+                padding: 1rem 2rem;
+            }
+            
+            /* Text scaling for mobile readability */
+            h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+            
+            /* Large text mobile adjustment */
+            .text-8xl {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Small mobile refinements */
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .step-card {
+                padding: 1.5rem;
+            }
+            
+            .roi-calculator {
+                padding: 1rem;
+            }
+            
+            .text-8xl {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Mobile-Friendly Enhancements */
+        @media (max-width: 768px) {
+            .step-card {
+                padding: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .step-number {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 20px !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .roi-calculator {
+                padding: 1.5rem !important;
+                margin: 1rem 0 !important;
+            }
+            
+            .calculator-input {
+                padding: 0.75rem !important;
+                font-size: 16px !important; /* Prevent zoom on iOS */
+            }
+            
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            h2 {
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            h3 {
+                font-size: 1.25rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            .w-60 {
+                width: 12rem !important;
+            }
+            
+            .h-16 {
+                height: 3rem !important;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .pulse-green {
+                min-height: 44px !important;
+                padding: 0.75rem 1.5rem !important;
+            }
+            
+            .text-8xl {
+                font-size: 4rem !important;
+            }
+            
+            /* Make images responsive */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .step-card {
+                padding: 1rem !important;
+            }
+            
+            .roi-calculator {
+                padding: 1rem !important;
+            }
+            
+            h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            h2 {
+                font-size: 1.25rem !important;
+            }
+            
+            h3 {
+                font-size: 1.1rem !important;
+            }
+            
+            .text-8xl {
+                font-size: 3rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-[#001F3F] border-b border-[#C0C0C0] z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="w-60 h-16 mr-4 overflow-hidden rounded-lg">
+                    <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="home.html" class="text-white hover:text-gray-200 transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-white hover:text-gray-200 transition-colors font-semibold">How It Works</a>
+                <a href="features.html" class="text-white hover:text-gray-200 transition-colors">Features</a>
+                <a href="pricing.html" class="text-white hover:text-gray-200 transition-colors">Pricing</a>
+                <a href="faqs.html" class="text-white hover:text-gray-200 transition-colors">FAQs</a>
+                <a href="contact.html" class="text-white hover:text-gray-200 transition-colors">Contact/Order</a>
+            </div>
+            
+            <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold pulse-green transition-colors">
+                Order Now
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white ml-4" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#001F3F] border-t border-[#C0C0C0]">
+            <div class="px-4 py-2 space-y-2">
+                <a href="home.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Home</a>
+                <a href="how-it-works.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center font-semibold">How It Works</a>
+                <a href="features.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Features</a>
+                <a href="pricing.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Pricing</a>
+                <a href="faqs.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">FAQs</a>
+                <a href="contact.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Contact/Order</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">How Vetkard Transforms Your Networking</h1>
+            <p class="text-xl text-gray-200 mb-8">From boring cards to lead magnets in 5 simple steps</p>
+            
+
+        </div>
+    </section>
+
+    <!-- 5-Step Process -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-6xl">
+            
+            <!-- Step 1 -->
+            <div class="step-card p-8 rounded-lg mb-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="step-number">1</div>
+                        <h3 class="text-3xl font-bold mb-4">Order via WhatsApp or Form</h3>
+                        <p class="text-gray-200 text-lg mb-4">Start with our secure, manual order process. Real humans ensuring your success.</p>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Instant WhatsApp support</li>
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Trusted by 500+ professionals</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <a href="contact.html" class="block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold mb-3 transition-colors">Order via Form</a>
+                        <a href="https://wa.me/yournumber?text=I want Vetkard" class="block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold transition-colors"><i class="fab fa-whatsapp mr-2"></i>WhatsApp Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card p-8 rounded-lg mb-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1 text-center">
+                        <i class="fas fa-user-shield text-8xl text-blue-400 mb-4"></i>
+                        <p class="text-gray-200">24-hour response guarantee</p>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="step-number">2</div>
+                        <h3 class="text-3xl font-bold mb-4">We Contact You for Details & Photo</h3>
+                        <p class="text-gray-200 text-lg mb-4">Our expert team reaches out within 24 hours for consultation and photo optimization.</p>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Professional consultation call</li>
+                            <li><i class="fas fa-check text-green-400 mr-3"></i>Business-specific customization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card p-8 rounded-lg mb-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="step-number">3</div>
+                        <h3 class="text-3xl font-bold mb-4">We Build Your Gated Site + Physical Card</h3>
+                        <p class="text-gray-200 text-lg mb-4">Professional website and premium card with lead capture technology.</p>
+                        <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-4 rounded-lg">
+                            <p class="font-bold">🎨 Value Worth ₹10,000+ - Included FREE!</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://i.postimg.cc/rp0yhZfv/vetkard-mockup.png" alt="Vetkard 3D Mockup" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card p-8 rounded-lg mb-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1 text-center">
+                        <img src="https://i.postimg.cc/cHsgLgfs/pop-up-screen.webp" alt="Lead Capture Form" class="w-full max-w-sm mx-auto rounded-lg shadow-lg">
+                        <p class="text-gray-200 text-sm mt-2">95% conversion rate</p>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="step-number">4</div>
+                        <h3 class="text-3xl font-bold mb-4">Share QR/NFC - Form Captures to WhatsApp</h3>
+                        <p class="text-gray-200 text-lg mb-4">Lead capture form sends details to your WhatsApp before site access.</p>
+                        <div class="bg-green-600 p-4 rounded-lg">
+                            <h4 class="text-xl font-bold">🚀 Average: 90% more leads!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-card p-8 rounded-lg mb-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="step-number">5</div>
+                        <h3 class="text-3xl font-bold mb-4">Renew Yearly for Ongoing Leads</h3>
+                        <p class="text-gray-200 text-lg mb-4">Annual renewal maintains your lead generation machine.</p>
+                        <div class="bg-gradient-to-r from-orange-600 to-red-600 p-4 rounded-lg">
+                            <p class="font-bold">⚡ Renewal spots limited - secure yours now!</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-infinity text-8xl text-purple-400 mb-4"></i>
+                        <div class="bg-green-600 p-3 rounded">
+                            <p class="font-bold">ROI: 2,600%+ annually</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="py-16 bg-gradient-to-r from-[#002244] to-[#003366]">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-4xl font-bold text-center mb-8">Calculate Your Vetkard ROI</h2>
+            
+            <div class="roi-calculator">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Your Current Situation</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-200 mb-2">Cards distributed per month:</label>
+                                <input type="number" id="cardsPerMonth" class="calculator-input" value="100" onchange="calculateROI()">
+                            </div>
+                            <div>
+                                <label class="block text-gray-200 mb-2">Average deal value (₹):</label>
+                                <input type="number" id="dealValue" class="calculator-input" value="50000" onchange="calculateROI()">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Results Comparison</h3>
+                        <div class="space-y-4">
+                            <div class="bg-red-900 p-4 rounded-lg">
+                                <h4 class="font-bold text-red-400">Without Vetkard</h4>
+                                <p class="text-white font-bold">Monthly revenue: ₹<span id="currentRevenue">50,000</span></p>
+                            </div>
+                            
+                            <div class="bg-green-900 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-400">With Vetkard</h4>
+                                <p class="text-white font-bold">Monthly revenue: ₹<span id="vetkardRevenue">1,350,000</span></p>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-green-600 to-blue-600 p-4 rounded-lg">
+                                <h4 class="text-2xl font-bold">🚀 ROI Increase</h4>
+                                <p class="text-2xl font-bold">+₹<span id="extraRevenue">1,300,000</span>/month</p>
+                                <p class="text-lg"><span id="roiPercent">2,600</span>% ROI increase!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6">Start Generating Leads Today!</h2>
+            <div class="bg-gradient-to-r from-orange-600 to-red-600 p-6 rounded-lg mb-8 max-w-2xl mx-auto">
+                <h3 class="text-xl font-bold mb-2">⏰ Don't Wait - Every Day You Delay is Money Lost!</h3>
+                <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-12 py-4 rounded-lg text-xl font-bold pulse-green transition-colors mt-4">
+                    Transform My Networking Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#000D1A] border-t border-[#C0C0C0] py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-44 h-12 mr-4 overflow-hidden rounded-lg">
+                        <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                    </div>
+                    <p class="text-gray-200">© 2025 Vetkard - A Lead Generation Tool</p>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/yournumber?text=I want Vetkard" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+
+
+        // ROI Calculator
+        function calculateROI() {
+            const cardsPerMonth = parseInt(document.getElementById('cardsPerMonth').value) || 100;
+            const dealValue = parseInt(document.getElementById('dealValue').value) || 50000;
+            
+            // Current: 5% contact rate, 20% conversion
+            const currentRevenue = cardsPerMonth * 0.05 * 0.2 * dealValue;
+            
+            // Vetkard: 90% contact rate, 30% conversion  
+            const vetkardRevenue = cardsPerMonth * 0.9 * 0.3 * dealValue;
+            
+            const extraRevenue = vetkardRevenue - currentRevenue;
+            const roiPercent = Math.round((extraRevenue / currentRevenue) * 100);
+            
+            document.getElementById('currentRevenue').textContent = currentRevenue.toLocaleString();
+            document.getElementById('vetkardRevenue').textContent = vetkardRevenue.toLocaleString();
+            document.getElementById('extraRevenue').textContent = extraRevenue.toLocaleString();
+            document.getElementById('roiPercent').textContent = roiPercent;
+        }
+
+        calculateROI();
+        
+
+    </script>
+</body>
+</html>

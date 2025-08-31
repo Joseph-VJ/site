@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetkard FAQs - Your Questions Answered | Unlock Confidence</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #001F3F;
+            color: white;
+        }
+        
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .faq-item {
+            background: linear-gradient(135deg, #003366, #004080);
+            border: 2px solid #C0C0C0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            background: linear-gradient(135deg, #004080, #0066cc);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #003366;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 2000px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-icon.active {
+            transform: rotate(180deg);
+        }
+        
+        /* Professional Mobile Optimization - Preserving Original Design */
+        @media (max-width: 768px) {
+            /* Navigation mobile handling */
+            .hidden.md\:flex {
+                display: none;
+            }
+            
+            .md\:hidden {
+                display: block;
+            }
+            
+            /* FAQ accordion mobile optimization */
+            .faq-question {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 1rem;
+            }
+            
+            .faq-answer.active {
+                padding: 1rem;
+            }
+            
+            /* Grid responsive layout */
+            .grid.md\:grid-cols-2 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Container mobile padding */
+            .container {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+            
+            /* Touch-friendly elements */
+            .pulse-green {
+                min-height: 48px;
+                padding: 1rem 2rem;
+            }
+            
+            /* Text scaling for mobile readability */
+            h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Small mobile refinements */
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .faq-question {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-[#001F3F] border-b border-[#C0C0C0] z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="w-60 h-16 mr-4 overflow-hidden rounded-lg">
+                    <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="home.html" class="text-white hover:text-gray-200 transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-white hover:text-gray-200 transition-colors">How It Works</a>
+                <a href="features.html" class="text-white hover:text-gray-200 transition-colors">Features</a>
+                <a href="pricing.html" class="text-white hover:text-gray-200 transition-colors">Pricing</a>
+                <a href="faqs.html" class="text-white hover:text-gray-200 transition-colors font-semibold">FAQs</a>
+                <a href="contact.html" class="text-white hover:text-gray-200 transition-colors">Contact/Order</a>
+            </div>
+            
+            <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold pulse-green transition-colors">
+                Order Now
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white ml-4" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#001F3F] border-t border-[#C0C0C0]">
+            <div class="px-4 py-2 space-y-2">
+                <a href="home.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Home</a>
+                <a href="how-it-works.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">How It Works</a>
+                <a href="features.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Features</a>
+                <a href="pricing.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Pricing</a>
+                <a href="faqs.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center font-semibold">FAQs</a>
+                <a href="contact.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Contact/Order</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Your Questions Answered</h1>
+            <h2 class="text-2xl text-gray-200 mb-8">Unlock Confidence in Your Lead Generation Investment</h2>
+            
+            <div class="bg-gradient-to-r from-green-600 to-blue-600 p-6 rounded-lg max-w-2xl mx-auto">
+                <h3 class="text-xl font-bold mb-2">🚀 Still Have Questions?</h3>
+                <a href="https://wa.me/yournumber?text=I have questions about Vetkard" class="inline-block bg-white text-green-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>Ask Us Anything
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ('faq1')">
+                    <h3 class="text-xl font-bold flex-1">Why choose Vetkard over traditional paper business cards?</h3>
+                    <i class="fas fa-chevron-down faq-icon text-2xl" id="icon1"></i>
+                </div>
+                <div class="faq-answer" id="faq1">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="text-center">
+                            <img src="https://i.postimg.cc/wT7rsK38/old-visit-card.jpg" alt="Old Boring Visit Card" class="w-full max-w-xs mx-auto mb-4 rounded-lg">
+                            <h4 class="font-bold text-red-400 mb-2">Traditional Cards</h4>
+                            <ul class="text-left text-gray-200 space-y-2">
+                                <li><i class="fas fa-times text-red-400 mr-2"></i>5% contact rate</li>
+                                <li><i class="fas fa-times text-red-400 mr-2"></i>Get lost or thrown away</li>
+                                <li><i class="fas fa-times text-red-400 mr-2"></i>No lead capture</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <img src="https://i.postimg.cc/3wMzTL8M/vetkard-mockup-back.png" alt="Vetkard Back Mockup" class="w-full max-w-xs mx-auto mb-4 rounded-lg">
+                            <h4 class="font-bold text-green-400 mb-2">Vetkard</h4>
+                            <ul class="text-left text-gray-200 space-y-2">
+                                <li><i class="fas fa-check text-green-400 mr-2"></i>90% contact rate</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i>Never gets lost</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i>Automatic lead capture</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-orange-600 to-red-600 p-4 rounded-lg mb-4">
+                        <p class="font-bold">💰 Bottom Line: Traditional cards = ₹50,000/month. Vetkard = ₹1,350,000/month. That's 2,600% ROI increase!</p>
+                    </div>
+                    <div class="text-center">
+                        <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                            Stop Losing Leads - Get Vetkard
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ('faq2')">
+                    <h3 class="text-xl font-bold flex-1">How does the yearly renewal work?</h3>
+                    <i class="fas fa-chevron-down faq-icon text-2xl" id="icon2"></i>
+                </div>
+                <div class="faq-answer" id="faq2">
+                    <div class="bg-green-600 p-6 rounded-lg mb-4">
+                        <h4 class="text-xl font-bold mb-4">🔒 Price Lock Guarantee</h4>
+                        <p class="mb-4">Pay the same price every year - ₹1,999 (Basic) or ₹6,999 (Premium)</p>
+                        <ul class="space-y-2 text-white">
+                            <li><i class="fas fa-check mr-2"></i>Hosting & maintenance included</li>
+                            <li><i class="fas fa-check mr-2"></i>Priority support</li>
+                            <li><i class="fas fa-check mr-2"></i>Free updates</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-200 mb-4">Your first month's leads pay for the entire year. Everything after is pure profit!</p>
+                    <div class="text-center">
+                        <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                            Lock In My Rate Forever
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ('faq3')">
+                    <h3 class="text-xl font-bold flex-1">Is the WhatsApp process secure?</h3>
+                    <i class="fas fa-chevron-down faq-icon text-2xl" id="icon3"></i>
+                </div>
+                <div class="faq-answer" id="faq3">
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <div class="text-center bg-[#002244] p-4 rounded-lg">
+                            <i class="fas fa-users text-3xl text-green-400 mb-2"></i>
+                            <h4 class="font-bold">500+ Users</h4>
+                            <p class="text-gray-200 text-sm">Trusted professionals</p>
+                        </div>
+                        <div class="text-center bg-[#002244] p-4 rounded-lg">
+                            <i class="fas fa-handshake text-3xl text-blue-400 mb-2"></i>
+                            <h4 class="font-bold">Manual Process</h4>
+                            <p class="text-gray-200 text-sm">Human verification</p>
+                        </div>
+                        <div class="text-center bg-[#002244] p-4 rounded-lg">
+                            <i class="fas fa-shield-check text-3xl text-purple-400 mb-2"></i>
+                            <h4 class="font-bold">30-Day Guarantee</h4>
+                            <p class="text-gray-200 text-sm">Full refund protection</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 mb-4">We've generated 50,000+ leads for users. Manual WhatsApp process ensures security and quality.</p>
+                    <div class="text-center">
+                        <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                            I Trust Vetkard - Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ('faq4')">
+                    <h3 class="text-xl font-bold flex-1">What's the real ROI?</h3>
+                    <i class="fas fa-chevron-down faq-icon text-2xl" id="icon4"></i>
+                </div>
+                <div class="faq-answer" id="faq4">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-red-900 p-4 rounded border border-red-400">
+                            <h5 class="font-bold text-red-400 mb-2">Traditional Cards</h5>
+                            <ul class="text-sm text-gray-200">
+                                <li>100 cards → 5 contacts → 1 sale</li>
+                                <li class="font-bold text-red-400">Result: ₹50,000/month</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-900 p-4 rounded border border-green-400">
+                            <h5 class="font-bold text-green-400 mb-2">With Vetkard</h5>
+                            <ul class="text-sm text-gray-200">
+                                <li>100 scans → 90 contacts → 27 sales</li>
+                                <li class="font-bold text-green-400">Result: ₹1,350,000/month</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-green-600 to-blue-600 p-4 rounded-lg mb-4">
+                        <p class="font-bold text-2xl">2,600% ROI Increase!</p>
+                        <p>Even at 50% performance, that's still 1,300% ROI</p>
+                    </div>
+                    <div class="text-center">
+                        <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                            I Want These Results
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ('faq5')">
+                    <h3 class="text-xl font-bold flex-1">How quickly will I see results?</h3>
+                    <i class="fas fa-chevron-down faq-icon text-2xl" id="icon5"></i>
+                </div>
+                <div class="faq-answer" id="faq5">
+                    <div class="grid grid-cols-4 gap-4 mb-6">
+                        <div class="text-center">
+                            <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 font-bold">1-3</div>
+                            <p class="text-sm">Order</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-blue-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 font-bold">4-7</div>
+                            <p class="text-sm">Design</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 font-bold">8-10</div>
+                            <p class="text-sm">Delivery</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-orange-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2 font-bold">11+</div>
+                            <p class="text-sm">Leads!</p>
+                        </div>
+                    </div>
+                    <div class="bg-[#002244] p-4 rounded-lg mb-4">
+                        <h4 class="font-bold text-green-400 mb-2">Typical Results:</h4>
+                        <ul class="text-gray-200 space-y-1">
+                            <li>Week 1: First leads arrive</li>
+                            <li>Month 1: Full ROI achieved</li>
+                            <li>Ongoing: Continuous lead generation</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                            Start My Transformation
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-gradient-to-r from-orange-600 to-red-600 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Networking?</h2>
+            <p class="text-xl mb-8">Join 500+ professionals already dominating their markets</p>
+            <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-12 py-4 rounded-lg text-xl font-bold pulse-green transition-colors">
+                Start Generating Leads Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#000D1A] border-t border-[#C0C0C0] py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-44 h-12 mr-4 overflow-hidden rounded-lg">
+                        <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                    </div>
+                    <p class="text-gray-200">© 2025 Vetkard - A Lead Generation Tool</p>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/yournumber?text=I want Vetkard" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(faqId) {
+            const answer = document.getElementById(faqId);
+            const icon = document.getElementById('icon' + faqId.slice(-1));
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item.id !== faqId) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.faq-icon').forEach(item => {
+                if (item.id !== icon.id) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

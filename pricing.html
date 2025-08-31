@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetkard Pricing - Invest in Your Lead Future | Plans That Pay Back</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #001F3F;
+            color: white;
+        }
+        
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, #003366, #004080);
+            border: 2px solid #C0C0C0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(192, 192, 192, 0.1);
+        }
+        
+        .popular-badge {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 8px 20px;
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .crossed-price {
+            text-decoration: line-through;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+        }
+        
+        .current-price {
+            color: #00ff88;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .urgency-timer {
+            background: linear-gradient(45deg, #dc3545, #fd7e14);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            animation: pulse 2s infinite;
+            margin: 30px 0;
+        }
+        
+        .savings-highlight {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        .guarantee-seal {
+            background: radial-gradient(circle, #ffd700, #ffed4e);
+            color: #333;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+            margin: 0 auto;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .decoy-card {
+            opacity: 0.7;
+            border-color: #666;
+        }
+        
+        .value-highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        /* Mobile-Friendly Enhancements */
+        @media (max-width: 768px) {
+            .pricing-card {
+                margin-bottom: 1.5rem !important;
+                padding: 1.5rem !important;
+            }
+            
+            .popular-badge {
+                top: 10px !important;
+                right: -20px !important;
+                padding: 6px 15px !important;
+                font-size: 10px !important;
+            }
+            
+            .current-price {
+                font-size: 2rem !important;
+            }
+            
+            .crossed-price {
+                font-size: 1rem !important;
+            }
+            
+        /* Professional Mobile Optimization - Preserving Original Design */
+        @media (max-width: 768px) {
+            /* Navigation mobile handling */
+            .hidden.md\:flex {
+                display: none;
+            }
+            
+            .md\:hidden {
+                display: block;
+            }
+            
+            /* Pricing cards mobile optimization */
+            .pricing-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Grid responsive layout */
+            .grid.md\:grid-cols-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Container mobile padding */
+            .container {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+            
+            /* Touch-friendly elements */
+            .pulse-green {
+                min-height: 48px;
+                padding: 1rem 2rem;
+            }
+            
+            /* Text scaling for mobile readability */
+            h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+            
+            /* Popular badge mobile positioning */
+            .popular-badge {
+                top: 10px;
+                right: -15px;
+                padding: 6px 12px;
+                font-size: 10px;
+            }
+            
+            /* Price text mobile scaling */
+            .current-price {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Small mobile refinements */
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .pricing-card {
+                padding: 1.5rem;
+            }
+            
+            .current-price {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-[#001F3F] border-b border-[#C0C0C0] z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="w-60 h-16 mr-4 overflow-hidden rounded-lg">
+                    <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="home.html" class="text-white hover:text-gray-200 transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-white hover:text-gray-200 transition-colors">How It Works</a>
+                <a href="features.html" class="text-white hover:text-gray-200 transition-colors">Features</a>
+                <a href="pricing.html" class="text-white hover:text-gray-200 transition-colors font-semibold">Pricing</a>
+                <a href="faqs.html" class="text-white hover:text-gray-200 transition-colors">FAQs</a>
+                <a href="contact.html" class="text-white hover:text-gray-200 transition-colors">Contact/Order</a>
+            </div>
+            
+            <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold pulse-green transition-colors">
+                Order Now
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white ml-4" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#001F3F] border-t border-[#C0C0C0]">
+            <div class="px-4 py-2 space-y-2">
+                <a href="home.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Home</a>
+                <a href="how-it-works.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">How It Works</a>
+                <a href="features.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Features</a>
+                <a href="pricing.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center font-semibold">Pricing</a>
+                <a href="faqs.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">FAQs</a>
+                <a href="contact.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Contact/Order</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Invest in Your Lead Future</h1>
+            <h2 class="text-2xl md:text-3xl text-gray-200 mb-8">Plans That Pay Back 2,600%+ ROI</h2>
+            
+
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+                
+                <!-- Basic Plan -->
+                <div class="pricing-card rounded-lg p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Basic Lead Generator</h3>
+                        <div class="mb-4">
+                            <span class="crossed-price">₹2,999</span>
+                            <div class="current-price">₹1,999</div>
+                            <p class="text-gray-200">+ ₹1,999/year renewal</p>
+                        </div>
+                        <div class="savings-highlight">Save ₹1,000 Today!</div>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <img src="https://i.postimg.cc/mD4xQmJ3/vetkard-mockup-2.jpg" alt="Vetkard Stacked Mockup" class="w-full max-w-xs mx-auto rounded-lg shadow-lg">
+                        <p class="text-gray-200 text-sm mt-2">Professional plastic card included</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Plastic QR card with premium finish</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Single-page professional website</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Subdomain hosting (yourname.vetkard.com)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Lead capture form system</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>WhatsApp integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>1-year hosting & maintenance</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="value-highlight">
+                        <h4 class="font-bold text-lg mb-2">🚀 Expected Results:</h4>
+                        <p>Generate leads effortlessly</p>
+                        <p>90% more contacts than paper cards</p>
+                        <p class="font-bold text-green-400">ROI: 2,000%+ annually</p>
+                    </div>
+                    
+                    <a href="contact.html" class="block bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-bold text-center transition-colors mb-4">
+                        Start Generating Leads - ₹1,999
+                    </a>
+                    
+                    <p class="text-center text-gray-200 text-sm">Perfect for entrepreneurs & freelancers</p>
+                </div>
+
+                <!-- Premium Plan (Most Popular) -->
+                <div class="pricing-card rounded-lg p-8 border-4 border-orange-500 relative">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-orange-400">Premium Lead Machine</h3>
+                        <div class="mb-4">
+                            <span class="crossed-price">₹9,999</span>
+                            <div class="current-price">₹6,999</div>
+                            <p class="text-gray-200">+ ₹6,999/year renewal</p>
+                        </div>
+                        <div class="savings-highlight">Save ₹3,000 Today!</div>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <img src="https://i.postimg.cc/d3QzfLqL/vetkard-mockup-front.png" alt="Vetkard Front Mockup" class="w-full max-w-xs mx-auto rounded-lg shadow-lg">
+                        <p class="text-orange-400 text-sm mt-2 font-bold">Premium metal card included</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-crown text-orange-400 mr-3"></i>
+                            <span class="font-bold">Premium metal NFC + QR card</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Multi-page custom website design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Custom domain (yourname.com)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Advanced lead capture system</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Priority WhatsApp support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Analytics dashboard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>SEO optimization included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Unlimited updates first year</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="value-highlight bg-gradient-to-r from-orange-600 to-red-600">
+                        <h4 class="font-bold text-lg mb-2">💰 Maximum ROI Results:</h4>
+                        <p>Advanced customization for pros</p>
+                        <p>Premium positioning = higher conversions</p>
+                        <p class="font-bold text-yellow-300">ROI: 3,000%+ annually</p>
+                    </div>
+                    
+                    <a href="contact.html" class="block bg-orange-600 hover:bg-orange-700 text-white px-6 py-4 rounded-lg font-bold text-center transition-colors mb-4 pulse-green">
+                        Dominate With Premium - ₹6,999
+                    </a>
+                    
+                    <p class="text-center text-orange-400 text-sm font-bold">Best for sales professionals & executives</p>
+                </div>
+
+                <!-- Enterprise/Decoy Plan -->
+                <div class="pricing-card decoy-card rounded-lg p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-400">Enterprise Suite</h3>
+                        <div class="mb-4">
+                            <span class="crossed-price">₹19,999</span>
+                            <div class="current-price text-gray-300">₹14,999</div>
+                            <p class="text-gray-200">+ ₹14,999/year renewal</p>
+                        </div>
+                        <div class="bg-gray-600 text-white px-4 py-2 rounded-lg inline-block">Custom Quote</div>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <i class="fas fa-building text-6xl text-gray-300 mb-4"></i>
+                        <p class="text-gray-300 text-sm">For teams & organizations</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gray-500 mr-3"></i>
+                            <span>Multiple team member cards</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gray-500 mr-3"></i>
+                            <span>Central dashboard management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gray-500 mr-3"></i>
+                            <span>Advanced analytics & reporting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gray-500 mr-3"></i>
+                            <span>Custom integrations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-gray-500 mr-3"></i>
+                            <span>Dedicated account manager</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="value-highlight bg-gray-700">
+                        <h4 class="font-bold text-lg mb-2 text-gray-300">🏢 Enterprise Features:</h4>
+                        <p class="text-gray-400">Perfect for large teams</p>
+                        <p class="text-gray-400">Bulk pricing available</p>
+                    </div>
+                    
+                    <a href="contact.html" class="block bg-gray-600 hover:bg-gray-700 text-white px-6 py-4 rounded-lg font-bold text-center transition-colors mb-4">
+                        Contact for Quote
+                    </a>
+                    
+                    <p class="text-center text-gray-300 text-sm">For enterprises with 10+ users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment & Security Trust Badges -->
+    <section class="py-12 bg-[#001F3F]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-8 text-white">Your Payment is 100% Secure</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Payment Methods -->
+                    <div class="bg-[#002244] p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-4 text-green-400">Accepted Payment Methods</h4>
+                        <div class="flex justify-center items-center space-x-4">
+                            <div class="bg-white p-3 rounded-lg">
+                                <i class="fab fa-cc-visa text-4xl text-blue-600"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <i class="fab fa-cc-mastercard text-4xl text-red-600"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <i class="fab fa-cc-amex text-4xl text-blue-500"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <i class="fas fa-credit-card text-4xl text-purple-600"></i>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <i class="fas fa-university text-4xl text-green-600"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm mt-4">Also accepts UPI, Net Banking & Wallets</p>
+                    </div>
+                    
+                    <!-- Security Certifications -->
+                    <div class="bg-[#002244] p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-4 text-green-400">Security Certifications</h4>
+                        <div class="flex justify-center items-center space-x-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-2">
+                                    <i class="fas fa-shield-alt text-2xl text-white"></i>
+                                </div>
+                                <p class="text-xs text-gray-300">SSL Secured</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-2">
+                                    <i class="fas fa-lock text-2xl text-white"></i>
+                                </div>
+                                <p class="text-xs text-gray-300">PCI Compliant</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mb-2">
+                                    <i class="fas fa-user-shield text-2xl text-white"></i>
+                                </div>
+                                <p class="text-xs text-gray-300">Privacy Protected</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-sm mt-4">Your data is encrypted & never shared</p>
+                    </div>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="mt-8 grid md:grid-cols-3 gap-6">
+                    <div class="bg-[#002244] p-4 rounded-lg">
+                        <i class="fas fa-shield-check text-3xl text-green-400 mb-2"></i>
+                        <h5 class="font-bold text-white">30-Day Guarantee</h5>
+                        <p class="text-gray-300 text-sm">Full refund if not satisfied</p>
+                    </div>
+                    <div class="bg-[#002244] p-4 rounded-lg">
+                        <i class="fas fa-headset text-3xl text-blue-400 mb-2"></i>
+                        <h5 class="font-bold text-white">24/7 Support</h5>
+                        <p class="text-gray-300 text-sm">WhatsApp support always</p>
+                    </div>
+                    <div class="bg-[#002244] p-4 rounded-lg">
+                        <i class="fas fa-users text-3xl text-purple-400 mb-2"></i>
+                        <h5 class="font-bold text-white">500+ Users</h5>
+                        <p class="text-gray-300 text-sm">Trusted by professionals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Trial Tease -->
+    <section class="py-16 bg-gradient-to-r from-[#002244] to-[#003366]">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">Want to Try Before You Buy?</h2>
+            <p class="text-xl text-gray-200 mb-8">We offer personalized demos via WhatsApp consultation</p>
+            
+            <div class="max-w-3xl mx-auto bg-[#003366] p-8 rounded-lg border border-[#C0C0C0]">
+                <h3 class="text-2xl font-bold mb-4 text-green-400">🎁 FREE Demo Process:</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div>
+                        <i class="fas fa-comments text-4xl text-blue-400 mb-3"></i>
+                        <h4 class="font-bold mb-2">1. WhatsApp Chat</h4>
+                        <p class="text-gray-200 text-sm">Message us your requirements</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-eye text-4xl text-purple-400 mb-3"></i>
+                        <h4 class="font-bold mb-2">2. Live Demo</h4>
+                        <p class="text-gray-200 text-sm">See Vetkard in action</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-handshake text-4xl text-green-400 mb-3"></i>
+                        <h4 class="font-bold mb-2">3. Get Started</h4>
+                        <p class="text-gray-200 text-sm">Choose your perfect plan</p>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/yournumber?text=I want a Vetkard demo" class="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>Get Free Demo Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Money-Back Guarantee -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">100% Risk-Free Investment</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 items-center">
+                    <div>
+                        <div class="guarantee-seal">
+                            30-DAY<br>MONEY<br>BACK
+                        </div>
+                        <h3 class="text-xl font-bold mt-4 mb-2">No Risk Guarantee</h3>
+                        <p class="text-gray-200">If you don't generate more leads in 30 days, full refund</p>
+                    </div>
+                    
+                    <div>
+                        <i class="fas fa-shield-check text-6xl text-green-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Secure Process</h3>
+                        <p class="text-gray-200">Manual WhatsApp verification - trusted by 500+ professionals</p>
+                    </div>
+                    
+                    <div>
+                        <i class="fas fa-headset text-6xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                        <p class="text-gray-200">Always here to ensure your success and maximum ROI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-[#000D1A] border-t border-[#C0C0C0] py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-44 h-12 mr-4 overflow-hidden rounded-lg">
+                        <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                    </div>
+                    <p class="text-gray-200">© 2025 Vetkard - A Lead Generation Tool</p>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/yournumber?text=I want Vetkard" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+
+
+
+        
+
+    </script>
+</body>
+</html>

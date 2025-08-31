@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetkard Features - Powerful Lead Generation Tools | Digital Business Cards</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #001F3F;
+            color: white;
+        }
+        
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #003366, #004080);
+            border: 2px solid #C0C0C0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(192, 192, 192, 0.1);
+        }
+        
+        .feature-large {
+            grid-column: span 2;
+        }
+        
+        .feature-tall {
+            grid-row: span 2;
+        }
+        
+        .demo-screen {
+            background: #000;
+            border: 3px solid #C0C0C0;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        
+        .urgency-timer {
+            background: linear-gradient(45deg, #dc3545, #fd7e14);
+            border-radius: 10px;
+            padding: 15px;
+            animation: pulse 2s infinite;
+        }
+        
+        .scarcity-badge {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 12px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* Professional Mobile Optimization - Preserving Original Design */
+        @media (max-width: 768px) {
+            /* Navigation mobile handling */
+            .hidden.md\:flex {
+                display: none;
+            }
+            
+            .md\:hidden {
+                display: block;
+            }
+            
+            /* Feature cards mobile optimization */
+            .feature-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Bento grid mobile stacking */
+            .feature-large,
+            .feature-tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            
+            /* Grid responsive layout */
+            .grid.grid-cols-1.md\:grid-cols-3.lg\:grid-cols-4 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            /* Container mobile padding */
+            .container {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+            
+            /* Touch-friendly elements */
+            .pulse-green {
+                min-height: 48px;
+                padding: 1rem 2rem;
+            }
+            
+            /* Text scaling for mobile readability */
+            h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Small mobile refinements */
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Mobile-Friendly Enhancements */
+        @media (max-width: 768px) {
+            .feature-card {
+                padding: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .feature-large,
+            .feature-tall {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+            
+            .demo-screen {
+                padding: 0.5rem !important;
+                margin: 1rem 0 !important;
+            }
+            
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            h2 {
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            h3 {
+                font-size: 1.25rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            .w-60 {
+                width: 12rem !important;
+            }
+            
+            .h-16 {
+                height: 3rem !important;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .urgency-timer {
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
+            }
+            
+            .pulse-green {
+                min-height: 44px !important;
+                padding: 0.75rem 1.5rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .feature-card {
+                padding: 1rem !important;
+            }
+            
+            h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            h2 {
+                font-size: 1.25rem !important;
+            }
+            
+            .urgency-timer {
+                padding: 0.75rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-[#001F3F] border-b border-[#C0C0C0] z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="w-60 h-16 mr-4 overflow-hidden rounded-lg">
+                    <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="home.html" class="text-white hover:text-gray-200 transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-white hover:text-gray-200 transition-colors">How It Works</a>
+                <a href="features.html" class="text-white hover:text-gray-200 transition-colors font-semibold">Features</a>
+                <a href="pricing.html" class="text-white hover:text-gray-200 transition-colors">Pricing</a>
+                <a href="faqs.html" class="text-white hover:text-gray-200 transition-colors">FAQs</a>
+                <a href="contact.html" class="text-white hover:text-gray-200 transition-colors">Contact/Order</a>
+            </div>
+            
+            <a href="contact.html" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold pulse-green transition-colors">
+                Order Now
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white ml-4" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#001F3F] border-t border-[#C0C0C0]">
+            <div class="px-4 py-2 space-y-2">
+                <a href="home.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Home</a>
+                <a href="how-it-works.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">How It Works</a>
+                <a href="features.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center font-semibold">Features</a>
+                <a href="pricing.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Pricing</a>
+                <a href="faqs.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">FAQs</a>
+                <a href="contact.html" class="block text-white hover:text-gray-200 py-2 min-h-[44px] flex items-center">Contact/Order</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Powerful Features for Lead Domination</h1>
+            <p class="text-xl text-gray-200 mb-8">Every feature designed to turn prospects into profits</p>
+            
+
+        </div>
+    </section>
+
+    <!-- Bento Grid Features -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                
+                <!-- Feature 1: Lead Generation System (Large) -->
+                <div class="feature-card feature-large p-8 relative">
+                    <div class="scarcity-badge">95% CONVERSION!</div>
+                    <h3 class="text-2xl font-bold mb-4">Intelligent Lead Capture System</h3>
+                    <p class="text-gray-200 mb-6">Revolutionary form captures name/email before site access - 95% conversion like top tools</p>
+                    
+                    <div class="demo-screen">
+                        <img src="https://i.postimg.cc/cHsgLgfs/pop-up-screen.webp" alt="Lead Capture Form" class="w-full rounded-lg">
+                        <p class="text-green-400 text-center mt-2 font-bold">Form to WhatsApp = Instant Lead!</p>
+                    </div>
+                    
+                    <ul class="space-y-2 text-gray-200 mb-6">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Instant WhatsApp notifications</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Name + contact capture before access</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>95% form completion rate</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Pre-qualified leads only</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold text-center transition-colors">
+                        Get Lead Machine Now
+                    </a>
+                </div>
+
+                <!-- Feature 2: Premium Custom Sites -->
+                <div class="feature-card feature-tall p-6 relative">
+                    <div class="scarcity-badge">LIMITED SLOTS!</div>
+                    <h3 class="text-xl font-bold mb-4">Premium Custom Sites</h3>
+                    <p class="text-gray-200 mb-4">5 templates or full multi-page custom design</p>
+                    
+                    <div class="space-y-3 mb-6">
+                        <div class="bg-[#002244] p-3 rounded border border-[#C0C0C0]">
+                            <h4 class="font-bold text-green-400">Template Sites</h4>
+                            <p class="text-sm text-gray-200">5 proven designs</p>
+                        </div>
+                        <div class="bg-[#002244] p-3 rounded border border-[#C0C0C0]">
+                            <h4 class="font-bold text-purple-400">Custom Multi-Page</h4>
+                            <p class="text-sm text-gray-200">Unlimited pages</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-orange-600 to-red-600 p-3 rounded-lg mb-4">
+                        <p class="font-bold text-sm">⚡ FOMO: Custom slots filling fast!</p>
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-200 mb-4">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Mobile responsive</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>SEO optimized</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Custom domain option</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="block bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold text-center text-sm transition-colors">
+                        Claim Custom Slot
+                    </a>
+                </div>
+
+                <!-- Feature 3: QR/NFC Cards -->
+                <div class="feature-card p-6">
+                    <h3 class="text-xl font-bold mb-4">QR/NFC Smart Cards</h3>
+                    <p class="text-gray-200 mb-4">Plastic or premium metal options</p>
+                    
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <img src="https://i.postimg.cc/d3QzfLqL/vetkard-mockup-front.png" alt="Vetkard Front Mockup" class="w-full rounded-lg">
+                        <img src="https://i.postimg.cc/3wMzTL8M/vetkard-mockup-back.png" alt="Vetkard Back Mockup" class="w-full rounded-lg">
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-200 mb-4">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Instant QR scanning</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>NFC tap technology</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Premium materials</li>
+                    </ul>
+                    
+                    <a href="pricing.html" class="block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold text-center text-sm transition-colors">
+                        See Card Options
+                    </a>
+                </div>
+
+                <!-- Feature 4: 1-Year Plan -->
+                <div class="feature-card p-6 relative">
+                    <div class="scarcity-badge">SPOTS LIMITED!</div>
+                    <h3 class="text-xl font-bold mb-4">1-Year Plan with Renewal</h3>
+                    <p class="text-gray-200 mb-4">Complete hosting & maintenance included</p>
+                    
+                    <div class="bg-green-600 p-4 rounded-lg mb-4 text-center">
+                        <h4 class="font-bold text-lg">Guaranteed Same Price</h4>
+                        <p class="text-sm">Lock in your rate forever!</p>
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-200 mb-4">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Annual hosting included</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Free updates & maintenance</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Priority customer support</li>
+                    </ul>
+                    
+                    <div class="bg-gradient-to-r from-orange-600 to-red-600 p-3 rounded-lg mb-4">
+                        <p class="font-bold text-sm">⚡ Renew at same price - spots limited!</p>
+                    </div>
+                    
+                    <a href="contact.html" class="block bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-bold text-center text-sm transition-colors">
+                        Secure Your Spot
+                    </a>
+                </div>
+
+                <!-- Feature 5: WhatsApp Integration -->
+                <div class="feature-card p-6">
+                    <h3 class="text-xl font-bold mb-4">Direct WhatsApp Integration</h3>
+                    <p class="text-gray-200 mb-4">Leads delivered instantly to your phone</p>
+                    
+                    <div class="bg-green-600 p-4 rounded-lg mb-4 text-center">
+                        <i class="fab fa-whatsapp text-3xl mb-2"></i>
+                        <p class="font-bold">Instant Notifications</p>
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-200 mb-4">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Real-time lead alerts</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>No app downloads needed</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Direct prospect contact</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-bold text-center text-sm transition-colors">
+                        Connect WhatsApp
+                    </a>
+                </div>
+
+                <!-- Feature 6: Analytics Dashboard -->
+                <div class="feature-card p-6">
+                    <h3 class="text-xl font-bold mb-4">Lead Analytics Dashboard</h3>
+                    <p class="text-gray-200 mb-4">Track your ROI and lead performance</p>
+                    
+                    <div class="bg-[#002244] p-4 rounded-lg mb-4">
+                        <div class="grid grid-cols-2 gap-2 text-center">
+                            <div>
+                                <p class="text-2xl font-bold text-green-400">234</p>
+                                <p class="text-xs text-gray-200">Total Leads</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-blue-400">95%</p>
+                                <p class="text-xs text-gray-200">Conversion</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-200 mb-4">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Lead tracking</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Conversion rates</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>ROI calculations</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold text-center text-sm transition-colors">
+                        View Demo
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-16 bg-gradient-to-r from-[#002244] to-[#003366]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Vetkard vs Traditional Cards</h2>
+            
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-red-900 p-8 rounded-lg border border-red-400">
+                    <h3 class="text-2xl font-bold text-red-400 mb-6 text-center">Traditional Cards (The Old Way)</h3>
+                    <img src="https://i.postimg.cc/wT7rsK38/old-visit-card.jpg" alt="Old Boring Visit Card" class="w-full max-w-sm mx-auto mb-6 rounded-lg">
+                    
+                    <ul class="space-y-3 text-gray-200">
+                        <li><i class="fas fa-times text-red-400 mr-3"></i>Cards get lost or thrown away</li>
+                        <li><i class="fas fa-times text-red-400 mr-3"></i>No lead capture mechanism</li>
+                        <li><i class="fas fa-times text-red-400 mr-3"></i>Static, boring presentation</li>
+                        <li><i class="fas fa-times text-red-400 mr-3"></i>No follow-up system</li>
+                        <li><i class="fas fa-times text-red-400 mr-3"></i>5% contact rate</li>
+                        <li><i class="fas fa-times text-red-400 mr-3"></i>Missed opportunities = Lost money</li>
+                    </ul>
+                    
+                    <div class="text-center mt-6">
+                        <p class="text-red-400 font-bold text-xl">Result: ₹50,000/month</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-900 p-8 rounded-lg border border-green-400">
+                    <h3 class="text-2xl font-bold text-green-400 mb-6 text-center">Vetkard (The Smart Way)</h3>
+                    <img src="https://i.postimg.cc/mD4xQmJ3/vetkard-mockup-2.jpg" alt="Vetkard Stacked Mockup" class="w-full max-w-sm mx-auto mb-6 rounded-lg">
+                    
+                    <ul class="space-y-3 text-gray-200">
+                        <li><i class="fas fa-check text-green-400 mr-3"></i>Digital cards never get lost</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i>Automatic lead capture system</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i>Dynamic, impressive websites</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i>Instant WhatsApp connection</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i>90% contact rate</li>
+                        <li><i class="fas fa-check text-green-400 mr-3"></i>Every interaction = Potential sale</li>
+                    </ul>
+                    
+                    <div class="text-center mt-6">
+                        <p class="text-green-400 font-bold text-xl">Result: ₹1,350,000/month</p>
+                        <p class="text-white font-bold text-2xl mt-2">2,600% ROI INCREASE!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12">Trusted by Elite Professionals</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-[#003366] p-6 rounded-lg border border-[#C0C0C0]">
+                    <div class="text-yellow-400 text-2xl mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-200 mb-4">"Generated 50 leads in first week!"</p>
+                    <p class="font-bold">- John D., Sales Director</p>
+                </div>
+                
+                <div class="bg-[#003366] p-6 rounded-lg border border-[#C0C0C0]">
+                    <div class="text-yellow-400 text-2xl mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-200 mb-4">"ROI was immediate and incredible!"</p>
+                    <p class="font-bold">- Sarah M., Real Estate</p>
+                </div>
+                
+                <div class="bg-[#003366] p-6 rounded-lg border border-[#C0C0C0]">
+                    <div class="text-yellow-400 text-2xl mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-200 mb-4">"Changed my business overnight!"</p>
+                    <p class="font-bold">- Mike K., Business Coach</p>
+                </div>
+            </div>
+            
+            <p class="text-gray-200 text-xl mb-8">Join 500+ professionals already dominating their markets</p>
+            
+            <div class="urgency-timer max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4">⚡ Don't Let Another Lead Slip Away!</h3>
+                <p class="text-lg mb-4">Every day you wait is money lost. The early bird gets the leads!</p>
+                <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white px-12 py-4 rounded-lg text-xl font-bold pulse-green transition-colors">
+                    Start Dominating Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#000D1A] border-t border-[#C0C0C0] py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-44 h-12 mr-4 overflow-hidden rounded-lg">
+                        <img src="https://i.postimg.cc/mg968QQm/Vet-Kard-Lo-Go.png" alt="Vetkard Logo" class="w-full h-full object-cover object-center scale-110 transform translate-y-0">
+                    </div>
+                    <p class="text-gray-200">© 2025 Vetkard - A Lead Generation Tool</p>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/yournumber?text=I want Vetkard" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+        
+
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
